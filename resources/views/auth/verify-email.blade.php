@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="row justify-content-center mt-5">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">Verify Your Email Address</div>
-            <div class="card-body">
+<div class="register-form-wrapper wow bounceIn" 
+    section="signin" 
+    style="margin: auto; position: relative; top: 15rem; width: 60%; margin-left: auto; margin-right: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <h2 id="section-2" style="text-align: center;">Verify Your Email Address</h2>
+            <div> 
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success" role="alert">
                         {{ $message }}

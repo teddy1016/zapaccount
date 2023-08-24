@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
     Route::get('/home', 'home')->name('home');
+    Route::post('/home', 'update')->name('update');
+    Route::put('/home', 'update')->name('update');
     Route::post('/logout', 'logout')->name('logout');
 });
 
@@ -41,3 +44,5 @@ Route::controller(VerificationController::class)->group(function() {
 Route::controller(AdminController::class)->group(function() {
     Route::get('/admin', 'admin')->name('admin');
 });
+
+Route::resource('users', UserController::class);

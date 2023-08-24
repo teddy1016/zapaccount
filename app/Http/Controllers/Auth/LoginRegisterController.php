@@ -40,7 +40,7 @@ class LoginRegisterController extends Controller
     {
         $request->validate([
             // 'name' => 'required|string|max:250',
-            'email' => 'required|string|email:rfc,dns|max:250|unique:users',
+            'email' => 'required|string|email:rfc, dns|max:250|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'country' => 'required|string|max:250',
             'zaptype' => 'required|string|max:50'
@@ -122,5 +122,20 @@ class LoginRegisterController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login')
             ->withSuccess('You have logged out successfully!');
-    } 
+    }
+
+    public function update(Request $request, User $user)
+    {
+        $request->validate([
+            // 'name' => 'required|string|max:250',
+            'email' => 'required|string|email:rfc,dns|max:250|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+            'country' => 'required|string|max:250',
+            'zaptype' => 'required|string|max:50'
+        ]);
+
+        $user->update($request->all());
+        return redirect()->route('home')
+            ->withSuccess('Your Infomation was updated!');
+    }
 }

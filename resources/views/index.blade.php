@@ -36,7 +36,6 @@
 
         <!--begin navbar-fixed-top -->
         <nav class="navbar navbar-expand-lg navbar-default navbar-fixed-top">
-            
             <!--begin container -->
             <div class="container">
                     <!--begin logo -->
