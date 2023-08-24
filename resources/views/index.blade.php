@@ -1,76 +1,6 @@
-<!DOCTYPE html>
-<html lang="zxx">
+@extends('layouts')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-
-    <title>Login to your ZAP Account - One account to manage all your ZAP"</title>
-    
-    <!-- Loading Bootstrap -->
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-
-    <!-- Loading Template CSS -->
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/css/pe-icon-7-stroke.css')}}" rel="stylesheet" >
-    <link href="{{asset('assets/css/style-magnific-popup.css')}}" rel="stylesheet">
-    <!-- Awsome Fonts -->
-    <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    
-</head>
-
-<body>
-
-    <!--begin header -->
-    <header class="header">
-
-        <!--begin navbar-fixed-top -->
-        <nav class="navbar navbar-expand-lg navbar-default navbar-fixed-top">
-            <!--begin container -->
-            <div class="container">
-                    <!--begin logo -->
-                    <a class="navbar-brand" href="{{ url('/')}}"><img src="{{ asset('assets/images/logo.png')}}" alt="ZAP Account"></a>
-                    <!--end logo -->
-                    <!--begin navbar-toggler -->
-                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
-                    </button>
-                    <!--end navbar-toggler -->
-
-                    <!--begin navbar-collapse -->
-                    <!-- <div class="navbar-collapse collapse" id="navbarCollapse" style=""> -->
-                    <div class="navbar-collapse collapse" style="">
-                        
-                        <!--begin navbar-nav -->
-                        <ul class="navbar-nav ml-auto">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#portfolio">Our Products</a></li>
-                            <li><a href="#team">ZAP Ads</a></li>
-                            <li><a href="#team">ZAP Market</a></li>
-                            <li><a href="#features">ZAP Places</a></li>
-                            <li class="discover-link"><a href="#section-2" class="discover-btn">Get An Account</a></li>
-                            <li class="discover-link"><a href="{{ route('login') }}" class="discover-btn">Login</a></li>
-                        </ul>
-                        <!--end navbar-nav -->
-                    </div>
-                    <!--end navbar-collapse -->
-            </div>
-    		<!--end container -->
-        </nav>
-    	<!--end navbar-fixed-top -->
-    </header>
-    <!--end header -->
-
+@section('content')
     <!--begin home section -->
     <section class="home-section" id="home">
 
@@ -113,11 +43,10 @@
                 <!--begin col-md-5-->
                 <div class="col-md-5 offset-md-1 margin-top-20">
 			
-
                     <!--begin register-form-wrapper-->
-                    <div class="register-form-wrapper wow bounceIn" data-wow-delay="0.5s" section="signup" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
+                    <div  id="section2" class="register-form-wrapper wow bounceIn" data-wow-delay="0.5s" section="signup" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
 
-                        <h3 id="section-2">Get Your ZAP account here</h3>
+                        <h3>Get Your ZAP account here</h3>
 
                         <p>One account for all things ZAP!</p>
 
@@ -1165,15 +1094,4 @@
         <!--end container -->
     </div>
     <!--end footer -->
-<!-- Load JS here for greater good =============================-->
-<script src="{{asset('assets/js/jquery-3.3.1.min.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.scrollTo-min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.nav.js')}}"></script>
-<script src="{{asset('assets/js/wow.js')}}"></script>
-<script src="{{asset('assets/js/plugins.js')}}"></script>
-<script src="{{asset('assets/js/custom.js')}}"></script>
-
-</body>
-</html>
+@endsection
