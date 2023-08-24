@@ -58,20 +58,6 @@
                             <!--end success message -->
                             
                             <!--begin register form -->
-                            <!-- <form class="register-form register" action="{{ route('store') }}" method="post">
-                                @csrf
-                                <input class="register-input name-input white-input" required="" name="email" placeholder="Email Address*" type="text">
-                                <input class="register-input name-email white-input" required="" name="password" placeholder="Password*" type="password">
-                                <input class="register-input name-email white-input" required="" name="confirm_pwd" placeholder="Confirm Password*" type="password">
-                                <input class="register-input region white-input" required="" name="country" placeholder="Country*" type="text">
-                                <select class="register-input white-input" required="" name="register_ticket">
-                                    <option value="">We need a ZAP account for...</option>
-                                    <option value="Individual">ZAP Ads</option>
-                                    <option value="Professional">ZAP Places</option>
-                                    <option value="Professional">List things for sale on ZAP Market</option>
-                                </select>                               
-                            </form> -->
-                            <!--end register form -->
                             <form action="{{ route('store') }}" method="post">
                                 @csrf
                                 <!-- <div class="mb-3 row">

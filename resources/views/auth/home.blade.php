@@ -1,4 +1,4 @@
-@extends('../layouts')
+@extends('layouts')
 
 @section('content')
 
@@ -9,7 +9,6 @@
         @foreach ($users as $user)
         <form action="{{ route('home') }}" method="post">
             @csrf
-            @method('PUT')
             <!-- <div class="mb-3 row">
                 <div class="col-md-12">
                 <input type="text" class="register-input name-input white-input form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" placeholder="User Name">

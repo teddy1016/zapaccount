@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="d-flex align-items-center justify-content-between">
-            <a href="{{ route('home') }}"><i class="mdi mdi-home me-3 text-white"></i></a>
+            <a href="{{ route('users.index') }}"><i class="mdi mdi-home me-3 text-white"></i></a>
             <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();"

@@ -26,7 +26,7 @@ class VerificationController extends Controller
     public function notice(Request $request)
     {
         return $request->user()->hasVerifiedEmail() 
-            ? redirect()->route('home') : view('auth.verify-email');
+            ? redirect()->route('users.index') : view('auth.verify-email');
     }
 
     /**
@@ -38,7 +38,7 @@ class VerificationController extends Controller
     public function verify(EmailVerificationRequest $request)
     {
         $request->fulfill();
-        return redirect()->route('home');
+        return redirect()->route('users.index');
     }
 
     /**

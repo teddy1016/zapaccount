@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -22,17 +23,15 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::latest()->paginate(5);
-        
-        return view('users.index', compact('users'))
-                    ->with('i', (request()->input('page', 1) - 1) * 5);    }
-
+        $users = User::where(['email' => Auth::user()->email])->get();
+        return view('profile.index', compact('users'))->with(['users'=>$users]);    
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('users.create');
+        return view('profile.create');
     }
 
     /**
@@ -47,7 +46,7 @@ class UserController extends Controller
         
         User::create($request->all());
          
-        return redirect()->route('users.index')
+        return redirect()->route('profile.index')
                         ->with('success','Product created successfully.');
     }
 
@@ -56,7 +55,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show',compact('user'));
+        return view('profile.show',compact('user'));
     }
 
     /**
@@ -64,7 +63,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit',compact('user'));
+        return view('profile.edit',compact('user'));
     }
 
     /**
@@ -74,7 +73,7 @@ class UserController extends Controller
     {
         $request->validate([
             // 'name' => 'required|string|max:250',
-            'email' => 'required|string|email:rfc,dns|max:250|unique:users',
+            // 'email' => 'required|string|email:rfc,dns|max:250|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'country' => 'required|string|max:250',
             'zaptype' => 'required|string|max:50'

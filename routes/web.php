@@ -27,9 +27,6 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/store', 'store')->name('store');
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
-    Route::get('/home', 'home')->name('home');
-    Route::post('/home', 'update')->name('update');
-    Route::put('/home', 'update')->name('update');
     Route::post('/logout', 'logout')->name('logout');
 });
 
@@ -45,4 +42,5 @@ Route::controller(AdminController::class)->group(function() {
     Route::get('/admin', 'admin')->name('admin');
 });
 
+// Define User Information Routes
 Route::resource('users', UserController::class);
