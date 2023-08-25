@@ -66,7 +66,7 @@
                             @else    
                                 <li class="discover-link">
                                     @if (Auth::user()->role == 1)
-                                    <a class="discover-btn" href="{{ route('admin') }}">
+                                    <a class="discover-btn" href="{{ route('admin.dashboard') }}">
                                         Admin 
                                     </a>
                                     @endif
@@ -74,12 +74,12 @@
                     
                                 <li class="discover-link dropdown">
                                     <a class="discover-btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {{ Auth::user()->email }}
+                                        {{ Auth::user()->name }}
                                     </a>
 
-                                    <ul class="dropdown-menu" style="left: 40%; top: 120%; border-radius: 25px; background-color: grey;">
+                                    <ul class="dropdown-menu" style="top: 120%; border-radius: 25px; background-color: grey;">
                                         <li class="discover-link dropdown" style="text-align: center;">
-                                            <a class=" discover-item" href="{{ route('logout') }}"
+                                            <a class=" discover-btn" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();"
                                             style="color: white;"

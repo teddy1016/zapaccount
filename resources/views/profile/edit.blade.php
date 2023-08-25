@@ -6,7 +6,7 @@
     style="margin: auto; position: relative; width: 80%;top: 15rem; margin-left: auto; margin-right: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Edit Product</h2>
+            <h2>Edit User Information</h2>
         </div>
         <div class="pull-right" style="margin-bottom: 1rem;">
             <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
@@ -29,6 +29,12 @@
             @method('PUT')
     
             <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <strong>Name:</strong>
+                        <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="name">
+                    </div>
+                </div>
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <div class="form-group">
                         <strong>Email:</strong>

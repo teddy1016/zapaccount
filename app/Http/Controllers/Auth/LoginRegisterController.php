@@ -46,8 +46,10 @@ class LoginRegisterController extends Controller
             'zaptype' => 'required|string|max:50'
         ]);
         
+        $temp = strchr($request->email, "@", true);
+
         $user = User::create([
-            'name' => null,
+            'name' => $temp,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'country' => $request->country,

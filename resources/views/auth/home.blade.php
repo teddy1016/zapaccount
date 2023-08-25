@@ -9,14 +9,14 @@
         @foreach ($users as $user)
         <form action="{{ route('home') }}" method="post">
             @csrf
-            <!-- <div class="mb-3 row">
+            <div class="mb-3 row">
                 <div class="col-md-12">
                 <input type="text" class="register-input name-input white-input form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" placeholder="User Name">
                     @if ($errors->has('name'))
                         <span class="text-danger">{{ $errors->first('name') }}</span>
                     @endif
                 </div>
-            </div> -->
+            </div>
             <div class="mb-3 row">
                 <label class="col-md-4" style="text-align: right;">Email: </label>
                 <div class="col-md-8">

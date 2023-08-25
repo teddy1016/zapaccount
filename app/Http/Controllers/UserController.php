@@ -82,7 +82,7 @@ class UserController extends Controller
         $user->update($request->all());
         
         return redirect()->route('users.index')
-                        ->with('success','Product updated successfully');
+                        ->with('success','Your Profile updated successfully');
     }
 
     /**

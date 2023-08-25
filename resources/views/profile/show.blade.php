@@ -14,6 +14,12 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
+                <strong style="font-size: 1.2em;">Name:</strong>
+                {{ $user->name }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
                 <strong style="font-size: 1.2em;">Email:</strong>
                 {{ $user->email }}
             </div>

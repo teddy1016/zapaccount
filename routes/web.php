@@ -39,7 +39,7 @@ Route::controller(VerificationController::class)->group(function() {
 
 // Define Admin Page Routes
 Route::controller(AdminController::class)->group(function() {
-    Route::get('/admin', 'admin')->name('admin');
+    Route::get('/admin/dashboard', 'dashboard')->name('admin.dashboard');
 });
 
 // Define User Information Routes

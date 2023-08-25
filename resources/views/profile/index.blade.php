@@ -17,6 +17,7 @@
         
         <table class="table table-bordered">
             <tr>
+                <th>Name</th>
                 <th>Email</th>
                 <th>Country</th>
                 <th>Zapaccount Type</th>
@@ -24,6 +25,7 @@
             </tr>
             @foreach ($users as $user)
             <tr>
+                <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->country }}</td>
                 <td>{{ $user->zaptype }}</td>

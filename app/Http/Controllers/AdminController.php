@@ -18,8 +18,24 @@ class AdminController extends Controller
     public function admin()
     {
         if(Auth::user()->role == 1)
-            return view('admin');
+            return view('admin.dashboard');
         else 
-            return redirect('home');
+            return redirect('users');
     } 
+
+    public function dashboard()
+    {
+        $users = User::latest()->paginate(5);
+        
+        return view('admin.dashboard',compact('users'))
+                    ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function delete_user(User $user)
+    {
+        $user->delete();
+         
+        return redirect()->route('admin.dashboard')
+                        ->with('success','User deleted successfully');
+    }
 }
