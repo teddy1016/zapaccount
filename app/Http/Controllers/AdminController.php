@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Log;
 
 class AdminController extends Controller
 {
@@ -26,8 +27,9 @@ class AdminController extends Controller
     public function dashboard()
     {
         $users = User::latest()->paginate(5);
+        $logs = Log::latest('created_at')->get()->take(10);
         
-        return view('admin.dashboard',compact('users'))
+        return view('admin.dashboard',compact('users', 'logs'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

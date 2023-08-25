@@ -486,60 +486,32 @@
                                       </div>
                                     </div>
                                     <div class="mt-3">
-
-                                      <div class="list align-items-center border-bottom py-2">
-                                        <div class="wrapper w-100">
-                                          <p class="mb-2 font-weight-medium">
-                                            Change in Directors
-                                          </p>
-                                          <div class="d-flex justify-content-between align-items-center">
-                                            <div class="d-flex align-items-center">
-                                              <i class="mdi mdi-calendar text-muted me-1"></i>
-                                              <p class="mb-0 text-small text-muted">Mar 14, 2019</p>
-                                            </div>
-                                          </div>
-                                        </div>
+                                    <div class="table-responsive  mt-1">
+                                      <table class="table select-table">
+                                        <thead>
+                                          <tr>
+                                            <th>Email</th>
+                                            <th>Time</th>
+                                            <th>Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          @foreach ($logs as $log)
+                                          <tr>
+                                            <td>{{ $log->email }}</td>
+                                            <td>{{ $log->created_at }}</td>
+                                            @if ($log->action == 0)
+                                              <td>logout</td>
+                                            @else
+                                              <td>Login</td>
+                                            @endif
+                                          </tr>
+                                          @endforeach
+                                        </tbody>
+                                      </table>
+                                      <div style="display: flex; justify-content: center;">
                                       </div>
-                                      <div class="list align-items-center border-bottom py-2">
-                                        <div class="wrapper w-100">
-                                          <p class="mb-2 font-weight-medium">
-                                            Other Events
-                                          </p>
-                                          <div class="d-flex justify-content-between align-items-center">
-                                            <div class="d-flex align-items-center">
-                                              <i class="mdi mdi-calendar text-muted me-1"></i>
-                                              <p class="mb-0 text-small text-muted">Mar 14, 2019</p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="list align-items-center border-bottom py-2">
-                                        <div class="wrapper w-100">
-                                          <p class="mb-2 font-weight-medium">
-                                            Quarterly Report
-                                          </p>
-                                          <div class="d-flex justify-content-between align-items-center">
-                                            <div class="d-flex align-items-center">
-                                              <i class="mdi mdi-calendar text-muted me-1"></i>
-                                              <p class="mb-0 text-small text-muted">Mar 14, 2019</p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="list align-items-center border-bottom py-2">
-                                        <div class="wrapper w-100">
-                                          <p class="mb-2 font-weight-medium">
-                                            Change in Directors
-                                          </p>
-                                          <div class="d-flex justify-content-between align-items-center">
-                                            <div class="d-flex align-items-center">
-                                              <i class="mdi mdi-calendar text-muted me-1"></i>
-                                              <p class="mb-0 text-small text-muted">Mar 14, 2019</p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      
+                                    </div>
                                       <div class="list align-items-center pt-3">
                                         <div class="wrapper w-100">
                                           <p class="mb-0">

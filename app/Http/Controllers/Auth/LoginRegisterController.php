@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
@@ -90,6 +91,14 @@ class LoginRegisterController extends Controller
 
         if(Auth::attempt($credentials))
         {
+            Log::create([
+                'email' => Auth::user()->email,
+                'action' => 1,
+                'updated_at' => date('Y-m-d H:i:s'),
+                'created_at' => date('Y-m-d H:i:s'),
+    
+            ]);
+
             $request->session()->regenerate();
             return redirect()->route('users.index');
         }
@@ -119,6 +128,14 @@ class LoginRegisterController extends Controller
      */
     public function logout(Request $request)
     {
+        Log::create([
+            'email' => Auth::user()->email,
+            'action' => 0,
+            'updated_at' => date('Y-m-d H:i:s'),
+            'created_at' => date('Y-m-d H:i:s'),
+
+        ]);
+
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
