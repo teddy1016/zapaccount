@@ -48,7 +48,7 @@
                     <div class="navbar-collapse collapse" style="">
                         
                         <!--begin navbar-nav -->
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto" style="display: flex; justify-content: center; align-items: center;">
                             <li><a href="/#home">Home</a></li>
                             <li><a href="/#portfolio">Our Products</a></li>
                             <li><a href="/#team">ZAP Ads</a></li>
@@ -57,32 +57,37 @@
                             <!-- <li class="discover-link"><a href="#section-2" class="discover-btn">Get An Account</a></li>
                             <li class="discover-link"><a href="{{ route('login') }}" class="discover-btn">Login</a></li> -->
                             @guest
-                                <li class="discover-link">
-                                    <a class="discover-btn " href="{{ url('/#section2')}}"> Get An Account </a>
+                                <li class="discover-link" style="display: flex; justify-content: center; align-items: center;">
+                                    <a class="discover-btn " href="{{ url('/#section2')}}" style="border-radius: 30px; "> Get An Account </a>
                                 </li>
-                                <li class="discover-link">
-                                    <a class="discover-btn {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('login') }}">Login</a>
+                                <li class="discover-link" style="display: flex; justify-content: center; align-items: center;">
+                                    <a class="discover-btn {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('login') }}" style="border-radius: 30px; ">Login</a>
                                 </li>
                             @else    
                                 <li class="discover-link">
                                     @if (Auth::user()->role == 1)
-                                    <a class="discover-btn" href="{{ route('admin.dashboard') }}">
+                                    <a class="discover-btn" href="{{ route('admin.dashboard') }}" style="border-radius: 30px; display: flex; justify-content: center; align-items: center;">
                                         Admin 
                                     </a>
                                     @endif
                                 </li>
                     
                                 <li class="discover-link dropdown">
-                                    <a class="discover-btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="discover-btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 30px;  display: flex; justify-content: center; align-items: center;">
                                         {{ Auth::user()->name }}
                                     </a>
 
-                                    <ul class="dropdown-menu" style="top: 120%; border-radius: 25px; background-color: grey;">
-                                        <li class="discover-link dropdown" style="text-align: center;">
+                                    <ul class="dropdown-menu" style="text-align: right;min-width: 30px;position: absolute;left: 45px;padding: 10px 20px;">
+                                        <li class="discover-link dropdown" style="text-align: right;">
+                                            <a class=" discover-btn" href="{{ route('users.index') }}"
+                                            style="color: black;"
+                                            >Profile</a>
+                                        </li>
+                                        <li class="discover-link dropdown" style="text-align: right;">
                                             <a class=" discover-btn" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();"
-                                            style="color: white;"
+                                            style="color: black;"
                                             >Logout</a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                                 @csrf

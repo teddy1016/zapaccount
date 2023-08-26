@@ -4,12 +4,12 @@
 <div class="register-form-wrapper wow bounceIn" 
     section="signin" 
     style="margin: auto; position: relative; top: 15rem; width: 40%; margin-left: auto; margin-right: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    <h2 id="section-2" style="text-align: center;">Login Page</h2>
+    <h2 id="section-2" style="text-align: center;">Login Here!</h2>
     <!--begin form-->
     <div>        
         <!--begin success message -->
         @if ($message = Session::get('success'))
-            <div class="alert alert-danger text-center">
+            <div class="alert alert-success text-center">
                 {{ $message }}
             </div>     
         @endif
