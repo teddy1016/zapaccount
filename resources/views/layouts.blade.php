@@ -66,8 +66,8 @@
                             @else    
                                 <li class="discover-link">
                                     @if (Auth::user()->role == 1)
-                                    <a class="discover-btn" href="{{ route('admin.dashboard') }}" style="border-radius: 30px; display: flex; justify-content: center; align-items: center;">
-                                        Admin 
+                                    <a href="{{ route('admin.dashboard') }}">
+                                        Dashboard
                                     </a>
                                     @endif
                                 </li>
@@ -77,7 +77,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
 
-                                    <ul class="dropdown-menu" style="text-align: right;min-width: 30px;position: absolute;left: 45px;padding: 10px 20px;">
+                                    <ul class="dropdown-menu" style="right: 15px;text-align: right;min-width: 30px;position: absolute;left: unset;padding: 10px 20px;">
                                         <li class="discover-link dropdown" style="text-align: right;">
                                             <a class=" discover-btn" href="{{ route('users.index') }}"
                                             style="color: black;"
